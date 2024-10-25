@@ -1,0 +1,14 @@
+services:
+  parking-control-db:
+    image: postgres:14.1-alpine
+    container_name: parking-control
+    restart: always
+    expose:
+      - 6436
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - '6436:6436'
+    command: -p 6436
